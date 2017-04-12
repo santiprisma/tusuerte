@@ -5,14 +5,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import ar.com.developeando.tusuerte.model.Signo;
 
 /**
  * Created by Alumno on 11/4/2017.
  */
 
 public class MainActivity extends Activity implements View.OnClickListener {
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -26,10 +31,13 @@ public class MainActivity extends Activity implements View.OnClickListener {
         EditText inputAnio = (EditText) findViewById(R.id.inputAnio);
         Integer anio = Integer.valueOf(inputAnio.getText().toString());
         TextView textSigno = (TextView) findViewById(R.id.textSigno);
+        Signo signo;
 
         if (validateAnio(anio)) {
-            textSigno.setText("Tu signo es "+ getSignoZodiaco(anio));
+            signo = getSignoZodiaco(anio);
+            textSigno.setText("Tu signo es "+ signo.getNombre());
             textSigno.setVisibility(View.VISIBLE);
+            signo.getImagen().setVisibility(View.VISIBLE);
         } else {
             Toast.makeText(this, "El año "+ anio +" no es válido", Toast.LENGTH_SHORT).show();
             textSigno.setVisibility(View.INVISIBLE);
@@ -42,45 +50,72 @@ public class MainActivity extends Activity implements View.OnClickListener {
         return anio >= 0 && anio <= 2017;
     }
 
-    private String getSignoZodiaco(Integer anio) {
+    private Signo getSignoZodiaco(Integer anio) {
+        Signo signo = new Signo();
+        signo.setImagen((ImageView) findViewById(R.id.imgSigno));
+
         switch (anio % 12) {
             case 0:
-                return "mono";
+                signo.setNombre("mono");
+                signo.getImagen().setImageResource(R.drawable.mono);
+                break;
 
             case 1:
-                return "gallo";
+                signo.setNombre("gallo");
+                signo.getImagen().setImageResource(R.drawable.gallo);
+                break;
 
             case 2:
-                return "perro";
+                signo.setNombre("perro");
+                signo.getImagen().setImageResource(R.drawable.perro);
+                break;
 
             case 3:
-                return "cerdo";
+                signo.setNombre("cerdo");
+                signo.getImagen().setImageResource(R.drawable.cerdo);
+                break;
 
             case 4:
-                return "rata";
+                signo.setNombre("rata");
+                signo.getImagen().setImageResource(R.drawable.rata);
+                break;
 
             case 5:
-                return "buey";
+                signo.setNombre("buey");
+                //signo.setImagen((ImageView) findViewById(R.id.imgGallo));
+                break;
 
             case 6:
-                return "tigre";
+                signo.setNombre("tigre");
+                //signo.setImagen((ImageView) findViewById(R.id.imgGallo));
+                break;
 
             case 7:
-                return "conejo";
+                signo.setNombre("conejo");
+                //signo.setImagen((ImageView) findViewById(R.id.imgGallo));
+                break;
 
             case 8:
-                return "dragon";
+                signo.setNombre("dragon");
+                //signo.setImagen((ImageView) findViewById(R.id.imgGallo));
+                break;
 
             case 9:
-                return "serpiente";
+                signo.setNombre("serpiente");
+                //signo.setImagen((ImageView) findViewById(R.id.imgGallo));
+                break;
 
             case 10:
-                return "caballo";
+                signo.setNombre("caballo");
+                //signo.setImagen((ImageView) findViewById(R.id.imgGallo));
+                break;
 
             case 11:
-                return "oveja";
+                signo.setNombre("ovaja");
+                //signo.setImagen((ImageView) findViewById(R.id.imgGallo));
+                break;
         }
 
-        return "?";
+        return signo;
     }
 }
