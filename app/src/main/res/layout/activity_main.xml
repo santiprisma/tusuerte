@@ -17,4 +17,12 @@
         android:layout_height="wrap_content"
         android:text="Calcular" />
 
+    <TextView
+        android:id="@+id/textSigno"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:textColor="@color/colorRed"
+        />
+
 </LinearLayout>

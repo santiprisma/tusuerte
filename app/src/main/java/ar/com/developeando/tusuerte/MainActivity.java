@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 /**
@@ -14,7 +15,7 @@ import android.widget.Toast;
 public class MainActivity extends Activity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main_layout);
+        setContentView(R.layout.activity_main);
 
         Button btnCalcular = (Button) findViewById(R.id.btnCalcular);
         btnCalcular.setOnClickListener(this);
@@ -24,18 +25,21 @@ public class MainActivity extends Activity implements View.OnClickListener {
     public void onClick(View v) {
         EditText inputAnio = (EditText) findViewById(R.id.inputAnio);
         Integer anio = Integer.valueOf(inputAnio.getText().toString());
+        TextView textSigno = (TextView) findViewById(R.id.textSigno);
 
         if (validateAnio(anio)) {
-            Toast.makeText(this, "El año "+ anio +" es válido y tu signo es "+ getSignoZodiaco(anio), Toast.LENGTH_SHORT).show();
+            textSigno.setText("Tu signo es "+ getSignoZodiaco(anio));
+            textSigno.setVisibility(View.VISIBLE);
         } else {
             Toast.makeText(this, "El año "+ anio +" no es válido", Toast.LENGTH_SHORT).show();
+            textSigno.setVisibility(View.INVISIBLE);
         }
 
-
+        inputAnio.setText("");
     }
 
     private Boolean validateAnio(Integer anio) {
-        return anio >= 0 || anio <= 2017;
+        return anio >= 0 && anio <= 2017;
     }
 
     private String getSignoZodiaco(Integer anio) {
