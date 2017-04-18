@@ -1,6 +1,7 @@
 package ar.com.developeando.tusuerte;
 
 import android.app.Activity;
+import android.icu.text.NumberFormat;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -29,21 +30,26 @@ public class MainActivity extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         EditText inputAnio = (EditText) findViewById(R.id.inputAnio);
-        Integer anio = Integer.valueOf(inputAnio.getText().toString());
-        TextView textSigno = (TextView) findViewById(R.id.textSigno);
-        Signo signo;
+        try {
+            Integer anio = Integer.valueOf(inputAnio.getText().toString());
+            TextView textSigno = (TextView) findViewById(R.id.textSigno);
+            Signo signo;
 
-        if (validateAnio(anio)) {
-            signo = getSignoZodiaco(anio);
-            textSigno.setText("Tu signo es "+ signo.getNombre());
-            textSigno.setVisibility(View.VISIBLE);
-            signo.getImagen().setVisibility(View.VISIBLE);
-        } else {
-            Toast.makeText(this, "El año "+ anio +" no es válido", Toast.LENGTH_SHORT).show();
-            textSigno.setVisibility(View.INVISIBLE);
+            if (validateAnio(anio)) {
+                signo = getSignoZodiaco(anio);
+                textSigno.setText("Tu signo es "+ signo.getNombre());
+                textSigno.setVisibility(View.VISIBLE);
+                signo.getImagen().setVisibility(View.VISIBLE);
+            } else {
+                Toast.makeText(this, "El año "+ anio +" no es válido", Toast.LENGTH_SHORT).show();
+                textSigno.setVisibility(View.INVISIBLE);
+            }
+
+            inputAnio.setText("");
+
+        } catch (NumberFormatException e) {
+            inputAnio.setError("El valor debe ser númerico.");
         }
-
-        inputAnio.setText("");
     }
 
     private Boolean validateAnio(Integer anio) {
