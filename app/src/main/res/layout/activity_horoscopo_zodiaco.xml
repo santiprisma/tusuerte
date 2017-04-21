@@ -1,30 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="horizontal" android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <EditText
-            android:id="@+id/inputMes"
+            android:id="@+id/inputDia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="number"
-            android:hint="Mes" />
+            android:hint="Día" />
 
         <EditText
-            android:id="@+id/inputAnio"
+            android:id="@+id/inputMes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="number"
-            android:hint="Año" />
+            android:hint="Mes" />
     </LinearLayout>
     <Button
         android:id="@+id/btnCalcular"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Calcular" />
+
+    <TextView
+        android:id="@+id/textResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 </LinearLayout>
