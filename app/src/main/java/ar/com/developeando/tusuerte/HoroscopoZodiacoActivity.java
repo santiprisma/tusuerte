@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
@@ -54,7 +55,12 @@ public class HoroscopoZodiacoActivity extends Activity {
                     inputMes.setText("");
                 }
 
-             //   Signo signo = getSignoZodiaco(dia, mes);
+                // Obtenemos el signo
+                Signo signo = getSignoZodiaco(dia, mes);
+
+                // Lo mostramos
+                TextView textSigno = (TextView) findViewById(R.id.textSigno);
+                textSigno.setText("Tu signo es: "+ signo.getNombre());
             }
         });
     }
@@ -67,7 +73,46 @@ public class HoroscopoZodiacoActivity extends Activity {
         c.getTime();
     }
 
-    /*private Signo getSignoZodiaco(Integer dia, Integer mes) {
-        if ((month == 12 && day >= 22 && day <= 31) || (month ==  1 && day >= 1 && day <= 19))
-    }*/
+    private Signo getSignoZodiaco(Integer dia, Integer mes) {
+        Signo signo = new Signo();
+
+        if ((mes == 12 && dia >= 22 && dia <= 31) || (mes ==  1 && dia >= 1 && dia <= 19)) {
+            signo.setNombre("Capricornio");
+        }
+        else if ((mes ==  1 && dia >= 20 && dia <= 31) || (mes ==  2 && dia >= 1 && dia <= 17)) {
+            signo.setNombre("Acuario");
+        }
+        else if ((mes ==  2 && dia >= 18 && dia <= 29) || (mes ==  3 && dia >= 1 && dia <= 19)) {
+            signo.setNombre("Piscis");
+        }
+        else if ((mes ==  3 && dia >= 20 && dia <= 31) || (mes ==  4 && dia >= 1 && dia <= 19)) {
+            signo.setNombre("Aries");
+        }
+        else if ((mes ==  4 && dia >= 20 && dia <= 30) || (mes ==  5 && dia >= 1 && dia <= 20)) {
+            signo.setNombre("Tauro");
+        }
+        else if ((mes ==  5 && dia >= 21 && dia <= 31) || (mes ==  6 && dia >= 1 && dia <= 20)) {
+            signo.setNombre("Géminis");
+        }
+        else if ((mes ==  6 && dia >= 21 && dia <= 30) || (mes ==  7 && dia >= 1 && dia <= 22)) {
+            signo.setNombre("Cancer");
+        }
+        else if ((mes ==  7 && dia >= 23 && dia <= 31) || (mes ==  8 && dia >= 1 && dia <= 22)) {
+            signo.setNombre("Leo");
+        }
+        else if ((mes ==  8 && dia >= 23 && dia <= 31) || (mes ==  9 && dia >= 1 && dia <= 22)) {
+            signo.setNombre("Virgo");
+        }
+        else if ((mes ==  9 && dia >= 23 && dia <= 30) || (mes == 10 && dia >= 1 && dia <= 22)) {
+            signo.setNombre("Libra");
+        }
+        else if ((mes == 10 && dia >= 23 && dia <= 31) || (mes == 11 && dia >= 1 && dia <= 21)) {
+            signo.setNombre("Escorpio");
+        }
+        else {
+            signo.setNombre("Sagitario");
+        }
+
+        return signo;
+    }
 }
