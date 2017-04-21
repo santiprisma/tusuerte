@@ -16,7 +16,6 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //Button btnCalcular = (Button) findViewById(R.id.btnCalcular);
         Button btnChino = (Button) findViewById(R.id.btnChino);
         btnChino.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -26,9 +25,13 @@ public class MainActivity extends Activity {
             }
         });
 
-/*        boton .setOnClickListener(new OnClickListener() {
-            protected void onClick(View c) {
+        Button btnZodiaco = (Button) findViewById(R.id.btnZodiaco);
+        btnZodiaco.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), HoroscopoZodiacoActivity.class);
+                startActivity(intent);
             }
-        };*/
+        });
     }
 }

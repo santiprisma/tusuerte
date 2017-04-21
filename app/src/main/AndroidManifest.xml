@@ -17,5 +17,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".HoroscopoChinoActivity" />
+        <activity android:name=".HoroscopoZodiacoActivity" />
     </application>
 </manifest>
