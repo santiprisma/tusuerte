@@ -1,6 +1,7 @@
 package ar.com.developeando.tusuerte;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -33,6 +34,10 @@ public class HoroscopoZodiacoActivity extends Activity {
 
                 EditText inputDia = (EditText) findViewById(R.id.inputDia);
                 EditText inputMes = (EditText) findViewById(R.id.inputMes);
+                TextView textSigno = (TextView) findViewById(R.id.textSigno);
+
+                // Borramos el resultado
+                textSigno.setText("");
 
                 try {
                     dia = Integer.valueOf(inputDia.getText().toString());
@@ -58,9 +63,15 @@ public class HoroscopoZodiacoActivity extends Activity {
                 // Obtenemos el signo
                 Signo signo = getSignoZodiaco(dia, mes);
 
-                // Lo mostramos
-                TextView textSigno = (TextView) findViewById(R.id.textSigno);
-                textSigno.setText("Tu signo es: "+ signo.getNombre());
+                if (signo.getNombre() != null) {
+                    // Lo mostramos
+                    textSigno.setText("Tu signo es: " + signo.getNombre());
+
+                    // Iniciamos la vista del resultado
+                    Intent intent = new Intent(getApplicationContext(), ResultActivity.class);
+                    intent.putExtra("signo", signo);
+                    startActivity(intent);
+                }
             }
         });
     }
@@ -109,7 +120,7 @@ public class HoroscopoZodiacoActivity extends Activity {
         else if ((mes == 10 && dia >= 23 && dia <= 31) || (mes == 11 && dia >= 1 && dia <= 21)) {
             signo.setNombre("Escorpio");
         }
-        else {
+        else if ((mes == 11 && dia >= 22 && dia <= 30) || (mes == 12 && dia >= 1 && dia <= 21)) {
             signo.setNombre("Sagitario");
         }
 

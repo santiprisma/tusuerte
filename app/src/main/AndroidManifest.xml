@@ -18,5 +18,6 @@
         </activity>
         <activity android:name=".HoroscopoChinoActivity" />
         <activity android:name=".HoroscopoZodiacoActivity" />
+        <activity android:name=".ResultActivity" />
     </application>
 </manifest>
