@@ -88,37 +88,37 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
             case 5:
                 signo.setNombre("buey");
-                //signo.setImagen((ImageView) findViewById(R.id.imgGallo));
+                signo.getImagen().setImageResource(R.drawable.buey);
                 break;
 
             case 6:
                 signo.setNombre("tigre");
-                //signo.setImagen((ImageView) findViewById(R.id.imgGallo));
+                signo.getImagen().setImageResource(R.drawable.tigre);
                 break;
 
             case 7:
                 signo.setNombre("conejo");
-                //signo.setImagen((ImageView) findViewById(R.id.imgGallo));
+                signo.getImagen().setImageResource(R.drawable.conejo);
                 break;
 
             case 8:
                 signo.setNombre("dragon");
-                //signo.setImagen((ImageView) findViewById(R.id.imgGallo));
+                signo.getImagen().setImageResource(R.drawable.dragon);
                 break;
 
             case 9:
                 signo.setNombre("serpiente");
-                //signo.setImagen((ImageView) findViewById(R.id.imgGallo));
+                signo.getImagen().setImageResource(R.drawable.serpiente);
                 break;
 
             case 10:
                 signo.setNombre("caballo");
-                //signo.setImagen((ImageView) findViewById(R.id.imgGallo));
+                signo.getImagen().setImageResource(R.drawable.caballo);
                 break;
 
             case 11:
-                signo.setNombre("ovaja");
-                //signo.setImagen((ImageView) findViewById(R.id.imgGallo));
+                signo.setNombre("oveja");
+                signo.getImagen().setImageResource(R.drawable.oveja);
                 break;
         }
 
