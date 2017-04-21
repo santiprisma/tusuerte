@@ -1,7 +1,6 @@
 package ar.com.developeando.tusuerte;
 
 import android.app.Activity;
-import android.icu.text.NumberFormat;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -16,12 +15,12 @@ import ar.com.developeando.tusuerte.model.Signo;
  * Created by Alumno on 11/4/2017.
  */
 
-public class MainActivity extends Activity implements View.OnClickListener {
+public class HoroscopoChinoActivity extends Activity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_horoscopo_chino);
 
         Button btnCalcular = (Button) findViewById(R.id.btnCalcular);
         btnCalcular.setOnClickListener(this);
