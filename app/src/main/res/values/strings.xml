@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Tu suerte</string>
+    <string name="horoChino">Hóroscopo Chino</string>
+    <string name="horoZodiaco">Horóscopo Zodíaco</string>
 </resources>
