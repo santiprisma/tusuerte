@@ -35,7 +35,7 @@ public class HoroscopoChinoActivity extends Activity implements View.OnClickList
             Signo signo;
 
             if (validateAnio(anio)) {
-                signo = getSignoZodiaco(anio);
+                signo = getSignoChino(anio);
                 textSigno.setText("Tu signo es "+ signo.getNombre());
                 textSigno.setVisibility(View.VISIBLE);
                 signo.getImagen().setVisibility(View.VISIBLE);
@@ -55,7 +55,7 @@ public class HoroscopoChinoActivity extends Activity implements View.OnClickList
         return anio >= 0 && anio <= 2017;
     }
 
-    private Signo getSignoZodiaco(Integer anio) {
+    private Signo getSignoChino(Integer anio) {
         Signo signo = new Signo();
         signo.setImagen((ImageView) findViewById(R.id.imgSigno));
 
