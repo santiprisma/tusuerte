@@ -2,6 +2,7 @@ package ar.com.developeando.tusuerte;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import ar.com.developeando.tusuerte.model.Signo;
@@ -21,5 +22,8 @@ public class ResultActivity extends Activity {
 
         TextView textSigno = (TextView) findViewById(R.id.textSigno);
         textSigno.setText(signo.getNombre());
+
+        ImageView imgSigno = (ImageView) findViewById(R.id.imgSigno);
+        imgSigno.setImageResource(signo.getImagen());
     }
 }

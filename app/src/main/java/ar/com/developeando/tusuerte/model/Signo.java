@@ -10,7 +10,7 @@ import java.io.Serializable;
 
 public class Signo implements Serializable {
     private String nombre;
-    private ImageView imagen;
+    private int imagen;
 
     public String getNombre() {
         return nombre;
@@ -20,10 +20,10 @@ public class Signo implements Serializable {
         this.nombre = nombre;
     }
 
-    public void setImagen(ImageView imagen) {
+    public void setImagen(int imagen) {
         this.imagen = imagen;
     }
-    public ImageView getImagen() {
+    public int getImagen() {
         return imagen;
     }
 }

@@ -38,7 +38,10 @@ public class HoroscopoChinoActivity extends Activity implements View.OnClickList
                 signo = getSignoChino(anio);
                 textSigno.setText("Tu signo es "+ signo.getNombre());
                 textSigno.setVisibility(View.VISIBLE);
-                signo.getImagen().setVisibility(View.VISIBLE);
+
+                ImageView imgSigno = (ImageView) findViewById(R.id.imgSigno);
+                imgSigno.setVisibility(View.VISIBLE);
+                imgSigno.setImageResource(signo.getImagen());
             } else {
                 Toast.makeText(this, "El año "+ anio +" no es válido", Toast.LENGTH_SHORT).show();
                 textSigno.setVisibility(View.INVISIBLE);
@@ -57,67 +60,66 @@ public class HoroscopoChinoActivity extends Activity implements View.OnClickList
 
     private Signo getSignoChino(Integer anio) {
         Signo signo = new Signo();
-        signo.setImagen((ImageView) findViewById(R.id.imgSigno));
 
         switch (anio % 12) {
             case 0:
                 signo.setNombre("mono");
-                signo.getImagen().setImageResource(R.drawable.mono);
+                signo.setImagen(R.drawable.mono);
                 break;
 
             case 1:
                 signo.setNombre("gallo");
-                signo.getImagen().setImageResource(R.drawable.gallo);
+                signo.setImagen(R.drawable.gallo);
                 break;
 
             case 2:
                 signo.setNombre("perro");
-                signo.getImagen().setImageResource(R.drawable.perro);
+                signo.setImagen(R.drawable.perro);
                 break;
 
             case 3:
                 signo.setNombre("cerdo");
-                signo.getImagen().setImageResource(R.drawable.cerdo);
+                signo.setImagen(R.drawable.cerdo);
                 break;
 
             case 4:
                 signo.setNombre("rata");
-                signo.getImagen().setImageResource(R.drawable.rata);
+                signo.setImagen(R.drawable.rata);
                 break;
 
             case 5:
                 signo.setNombre("buey");
-                signo.getImagen().setImageResource(R.drawable.buey);
+                signo.setImagen(R.drawable.buey);
                 break;
 
             case 6:
                 signo.setNombre("tigre");
-                signo.getImagen().setImageResource(R.drawable.tigre);
+                signo.setImagen(R.drawable.tigre);
                 break;
 
             case 7:
                 signo.setNombre("conejo");
-                signo.getImagen().setImageResource(R.drawable.conejo);
+                signo.setImagen(R.drawable.conejo);
                 break;
 
             case 8:
                 signo.setNombre("dragon");
-                signo.getImagen().setImageResource(R.drawable.dragon);
+                signo.setImagen(R.drawable.dragon);
                 break;
 
             case 9:
                 signo.setNombre("serpiente");
-                signo.getImagen().setImageResource(R.drawable.serpiente);
+                signo.setImagen(R.drawable.serpiente);
                 break;
 
             case 10:
                 signo.setNombre("caballo");
-                signo.getImagen().setImageResource(R.drawable.caballo);
+                signo.setImagen(R.drawable.caballo);
                 break;
 
             case 11:
                 signo.setNombre("oveja");
-                signo.getImagen().setImageResource(R.drawable.oveja);
+                signo.setImagen(R.drawable.oveja);
                 break;
         }
 
