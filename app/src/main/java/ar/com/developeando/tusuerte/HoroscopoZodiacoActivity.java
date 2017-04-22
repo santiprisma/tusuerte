@@ -34,10 +34,6 @@ public class HoroscopoZodiacoActivity extends Activity {
 
                 EditText inputDia = (EditText) findViewById(R.id.inputDia);
                 EditText inputMes = (EditText) findViewById(R.id.inputMes);
-                TextView textSigno = (TextView) findViewById(R.id.textSigno);
-
-                // Borramos el resultado
-                textSigno.setText("");
 
                 try {
                     dia = Integer.valueOf(inputDia.getText().toString());
@@ -56,6 +52,7 @@ public class HoroscopoZodiacoActivity extends Activity {
                     validateDate(dia, mes);
                 } catch (Exception e) {
                     Toast.makeText(getApplicationContext(), "La fecha ingresada no es correcta.", Toast.LENGTH_SHORT).show();
+                } finally {
                     inputDia.setText("");
                     inputMes.setText("");
                 }
@@ -64,9 +61,6 @@ public class HoroscopoZodiacoActivity extends Activity {
                 Signo signo = getSignoZodiaco(dia, mes);
 
                 if (signo.getNombre() != null) {
-                    // Lo mostramos
-                    textSigno.setText("Tu signo es: " + signo.getNombre());
-
                     // Iniciamos la vista del resultado
                     Intent intent = new Intent(getApplicationContext(), ResultActivity.class);
                     intent.putExtra("signo", signo);
@@ -93,36 +87,47 @@ public class HoroscopoZodiacoActivity extends Activity {
         }
         else if ((mes ==  1 && dia >= 20 && dia <= 31) || (mes ==  2 && dia >= 1 && dia <= 17)) {
             signo.setNombre("Acuario");
+            signo.setImagen(R.drawable.acuario);
         }
         else if ((mes ==  2 && dia >= 18 && dia <= 29) || (mes ==  3 && dia >= 1 && dia <= 19)) {
             signo.setNombre("Piscis");
+            signo.setImagen(R.drawable.piscis);
         }
         else if ((mes ==  3 && dia >= 20 && dia <= 31) || (mes ==  4 && dia >= 1 && dia <= 19)) {
             signo.setNombre("Aries");
+            signo.setImagen(R.drawable.aries);
         }
         else if ((mes ==  4 && dia >= 20 && dia <= 30) || (mes ==  5 && dia >= 1 && dia <= 20)) {
             signo.setNombre("Tauro");
+            signo.setImagen(R.drawable.tauro);
         }
         else if ((mes ==  5 && dia >= 21 && dia <= 31) || (mes ==  6 && dia >= 1 && dia <= 20)) {
             signo.setNombre("Géminis");
+            signo.setImagen(R.drawable.geminis);
         }
         else if ((mes ==  6 && dia >= 21 && dia <= 30) || (mes ==  7 && dia >= 1 && dia <= 22)) {
             signo.setNombre("Cancer");
+            signo.setImagen(R.drawable.cancer);
         }
         else if ((mes ==  7 && dia >= 23 && dia <= 31) || (mes ==  8 && dia >= 1 && dia <= 22)) {
             signo.setNombre("Leo");
+            signo.setImagen(R.drawable.leo);
         }
         else if ((mes ==  8 && dia >= 23 && dia <= 31) || (mes ==  9 && dia >= 1 && dia <= 22)) {
             signo.setNombre("Virgo");
+            signo.setImagen(R.drawable.virgo);
         }
         else if ((mes ==  9 && dia >= 23 && dia <= 30) || (mes == 10 && dia >= 1 && dia <= 22)) {
             signo.setNombre("Libra");
+            signo.setImagen(R.drawable.libra);
         }
         else if ((mes == 10 && dia >= 23 && dia <= 31) || (mes == 11 && dia >= 1 && dia <= 21)) {
             signo.setNombre("Escorpio");
+            signo.setImagen(R.drawable.escorpio);
         }
         else if ((mes == 11 && dia >= 22 && dia <= 30) || (mes == 12 && dia >= 1 && dia <= 21)) {
             signo.setNombre("Sagitario");
+            signo.setImagen(R.drawable.sagitario);
         }
 
         return signo;
