@@ -41,6 +41,7 @@ public class HoroscopoChinoActivity extends Activity implements View.OnClickList
                     Intent intent = new Intent(getApplicationContext(), ResultActivity.class);
                     intent.putExtra("signo", signo);
                     startActivity(intent);
+                    finish();
                 }
             } else {
                 Toast.makeText(this, "El año "+ anio +" no es válido", Toast.LENGTH_SHORT).show();

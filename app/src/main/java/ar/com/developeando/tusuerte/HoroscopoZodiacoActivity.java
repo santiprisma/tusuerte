@@ -65,6 +65,7 @@ public class HoroscopoZodiacoActivity extends Activity {
                     Intent intent = new Intent(getApplicationContext(), ResultActivity.class);
                     intent.putExtra("signo", signo);
                     startActivity(intent);
+                    finish();
                 }
             }
         });
