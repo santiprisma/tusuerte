@@ -63,62 +63,62 @@ public class HoroscopoChinoActivity extends Activity implements View.OnClickList
 
         switch (anio % 12) {
             case 0:
-                signo.setNombre("mono");
+                signo.setNombre(getString(R.string.mono));
                 signo.setImagen(R.drawable.mono);
                 break;
 
             case 1:
-                signo.setNombre("gallo");
+                signo.setNombre(getString(R.string.gallo));
                 signo.setImagen(R.drawable.gallo);
                 break;
 
             case 2:
-                signo.setNombre("perro");
+                signo.setNombre(getString(R.string.perro));
                 signo.setImagen(R.drawable.perro);
                 break;
 
             case 3:
-                signo.setNombre("cerdo");
+                signo.setNombre(getString(R.string.cerdo));
                 signo.setImagen(R.drawable.cerdo);
                 break;
 
             case 4:
-                signo.setNombre("rata");
+                signo.setNombre(getString(R.string.rata));
                 signo.setImagen(R.drawable.rata);
                 break;
 
             case 5:
-                signo.setNombre("buey");
+                signo.setNombre(getString(R.string.buey));
                 signo.setImagen(R.drawable.buey);
                 break;
 
             case 6:
-                signo.setNombre("tigre");
+                signo.setNombre(getString(R.string.tigre));
                 signo.setImagen(R.drawable.tigre);
                 break;
 
             case 7:
-                signo.setNombre("conejo");
+                signo.setNombre(getString(R.string.conejo));
                 signo.setImagen(R.drawable.conejo);
                 break;
 
             case 8:
-                signo.setNombre("dragon");
+                signo.setNombre(getString(R.string.dragon));
                 signo.setImagen(R.drawable.dragon);
                 break;
 
             case 9:
-                signo.setNombre("serpiente");
+                signo.setNombre(getString(R.string.serpiente));
                 signo.setImagen(R.drawable.serpiente);
                 break;
 
             case 10:
-                signo.setNombre("caballo");
+                signo.setNombre(getString(R.string.caballo));
                 signo.setImagen(R.drawable.caballo);
                 break;
 
             case 11:
-                signo.setNombre("oveja");
+                signo.setNombre(getString(R.string.oveja));
                 signo.setImagen(R.drawable.oveja);
                 break;
         }

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="mono">Monkey</string>
+    <string name="gallo">Ox</string>
+    <string name="perro">Dog</string>
+    <string name="cerdo">Pig</string>
+    <string name="rata">Rat</string>
+    <string name="buey">Ox</string>
+    <string name="tigre">Tiger</string>
+    <string name="conejo">Rabbit</string>
+    <string name="dragon">Dragon</string>
+    <string name="serpiente">Snake</string>
+    <string name="caballo">Horse</string>
+    <string name="oveja">Oveja</string>
+</resources>
