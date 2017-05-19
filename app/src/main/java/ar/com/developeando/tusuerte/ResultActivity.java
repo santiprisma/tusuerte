@@ -76,6 +76,25 @@ public class ResultActivity extends AppCompatActivity {
                 return true;
 
             case R.id.itemCompartir:
+                intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com"));
+                if (intent.resolveActivity(getPackageManager()) != null) {
+                    startActivity(intent);
+                }
+                return true;
+
+            case R.id.itemAmor:
+                intent = new Intent(getApplicationContext(), AmorPredictionActivity.class);
+                startActivity(intent);
+                return true;
+
+            case R.id.itemSalud:
+                intent = new Intent(getApplicationContext(), AmorPredictionActivity.class);
+                startActivity(intent);
+                return true;
+
+            case R.id.itemDinero:
+                intent = new Intent(getApplicationContext(), AmorPredictionActivity.class);
+                startActivity(intent);
                 return true;
 
             default:

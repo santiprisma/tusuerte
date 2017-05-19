@@ -19,5 +19,8 @@
         <activity android:name=".HoroscopoChinoActivity" />
         <activity android:name=".HoroscopoZodiacoActivity" />
         <activity android:name=".ResultActivity" />
+        <activity android:name=".AmorPredictionActivity" />
+        <activity android:name=".SaludPredictionActivity" />
+        <activity android:name=".DineroPredictionActivity" />
     </application>
 </manifest>
