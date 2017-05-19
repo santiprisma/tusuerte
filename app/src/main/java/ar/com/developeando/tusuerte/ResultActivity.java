@@ -66,8 +66,8 @@ public class ResultActivity extends AppCompatActivity {
                 return true;
 
             case R.id.itemSMS:
-                intent = new Intent(Intent.ACTION_SEND);
-                intent.setData(Uri.parse("smsto:"));  // This ensures only SMS apps respond
+                intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("sms:1234"));  // This ensures only SMS apps respond
                 intent.putExtra("sms_body", "Mi signo es: "+ signo.getNombre());
                 if (intent.resolveActivity(getPackageManager()) != null) {
                     startActivity(intent);
