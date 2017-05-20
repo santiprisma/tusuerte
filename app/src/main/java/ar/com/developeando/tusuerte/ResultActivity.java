@@ -12,15 +12,23 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import ar.com.developeando.tusuerte.iface.Oracleable;
 import ar.com.developeando.tusuerte.model.Signo;
+import ar.com.developeando.tusuerte.task.OraculoTask;
 
 /**
  * Created by Alumno on 21/4/2017.
  */
 
-public class ResultActivity extends AppCompatActivity {
+public class ResultActivity extends AppCompatActivity implements Oracleable {
 
     Signo signo = null;
+    protected String amor;
+    protected String salud;
+    protected String dinero;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +49,9 @@ public class ResultActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(R.string.app_name);
+
+        OraculoTask task = new OraculoTask(this);
+        task.execute(signo.getNombre());
     }
 
     @Override
@@ -84,16 +95,19 @@ public class ResultActivity extends AppCompatActivity {
 
             case R.id.itemAmor:
                 intent = new Intent(getApplicationContext(), AmorPredictionActivity.class);
+                intent.putExtra("horaculo", amor);
                 startActivity(intent);
                 return true;
 
             case R.id.itemSalud:
                 intent = new Intent(getApplicationContext(), AmorPredictionActivity.class);
+                intent.putExtra("horaculo", salud);
                 startActivity(intent);
                 return true;
 
             case R.id.itemDinero:
                 intent = new Intent(getApplicationContext(), AmorPredictionActivity.class);
+                intent.putExtra("horaculo", dinero);
                 startActivity(intent);
                 return true;
 
@@ -102,6 +116,17 @@ public class ResultActivity extends AppCompatActivity {
                 // Invoke the superclass to handle it.
                 return super.onOptionsItemSelected(item);
 
+        }
+    }
+
+    @Override
+    public void oracleResponse(JSONObject object) {
+        try {
+            amor = object.getString("amor");
+            dinero = object.getString("dinero");
+            salud = object.getString("salud");
+        } catch (JSONException e) {
+            amor = salud = dinero = "Error al cargar el oraculo.";
         }
     }
 }
