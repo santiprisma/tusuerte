@@ -15,6 +15,8 @@ public class DineroPredictionActivity extends Activity {
         setContentView(R.layout.activty_dinero_prediction);
 
         TextView textView = (TextView) findViewById(R.id.textDinero);
-        textView.setText(getIntent().getStringExtra("horaculo"));
+        if (getIntent().getStringExtra("horaculo") != null) {
+            textView.setText(getIntent().getStringExtra("horaculo"));
+        }
     }
 }

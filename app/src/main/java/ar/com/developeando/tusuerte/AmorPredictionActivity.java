@@ -16,6 +16,8 @@ public class AmorPredictionActivity extends Activity {
         setContentView(R.layout.activty_amor_prediction);
 
         TextView textView = (TextView) findViewById(R.id.textAmor);
-        textView.setText(getIntent().getStringExtra("horaculo"));
+        if (getIntent().getStringExtra("horaculo") != null) {
+            textView.setText(getIntent().getStringExtra("horaculo"));
+        }
     }
 }

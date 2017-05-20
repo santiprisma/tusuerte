@@ -50,8 +50,10 @@ public class ResultActivity extends AppCompatActivity implements Oracleable {
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(R.string.app_name);
 
-        OraculoTask task = new OraculoTask(this);
-        task.execute(signo.getNombre());
+        if (signo.getKey() != null) {
+            OraculoTask task = new OraculoTask(this);
+            task.execute(signo.getNombre());
+        }
     }
 
     @Override

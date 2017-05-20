@@ -11,6 +11,7 @@ import java.io.Serializable;
 public class Signo implements Serializable {
     private String nombre;
     private int imagen;
+    private String key;
 
     public String getNombre() {
         return nombre;
@@ -25,5 +26,13 @@ public class Signo implements Serializable {
     }
     public int getImagen() {
         return imagen;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
     }
 }
